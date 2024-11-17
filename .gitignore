@@ -33,3 +33,9 @@
 
 # Build directory
 build
+
+# VSCode project settings
+.vscode
+
+# Clangd cache files
+.cache
