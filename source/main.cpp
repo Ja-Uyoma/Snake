@@ -4,7 +4,7 @@
 #include <SFML/Window/Window.hpp>
 #include <cstdlib>
 
-int main()
+void Main()
 {
   sf::RenderWindow window(sf::VideoMode(640, 480), "Snake");
 
@@ -20,6 +20,11 @@ int main()
     window.clear();
     window.display();
   }
+}
+
+int main()
+{
+  Main();
 
   return EXIT_SUCCESS;
 }
