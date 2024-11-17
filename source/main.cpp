@@ -1,16 +1,11 @@
+#include "Constants.hpp"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Window/Window.hpp>
 #include <cstdlib>
 
-inline constexpr auto BlockSize {16};
-
-struct Window
-{
-  static constexpr auto Width {40 * BlockSize};
-  static constexpr auto Height {30 * BlockSize};
-};
+namespace snake {
 
 void Main()
 {
@@ -30,9 +25,11 @@ void Main()
   }
 }
 
+}   // namespace snake
+
 int main()
 {
-  Main();
+  snake::Main();
 
   return EXIT_SUCCESS;
 }
