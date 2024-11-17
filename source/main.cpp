@@ -4,9 +4,17 @@
 #include <SFML/Window/Window.hpp>
 #include <cstdlib>
 
+inline constexpr auto BlockSize {16};
+
+struct Window
+{
+  static constexpr auto Width {40 * BlockSize};
+  static constexpr auto Height {30 * BlockSize};
+};
+
 void Main()
 {
-  sf::RenderWindow window(sf::VideoMode(640, 480), "Snake");
+  sf::RenderWindow window(sf::VideoMode(Window::Width, Window::Height), "Snake");
 
   while (window.isOpen()) {
     sf::Event event;
