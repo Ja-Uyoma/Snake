@@ -1,4 +1,5 @@
 #include "Constants.hpp"
+#include "Fruit.hpp"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/VideoMode.hpp>
@@ -10,6 +11,7 @@ namespace snake {
 void Main()
 {
   sf::RenderWindow window(sf::VideoMode(Window::Width, Window::Height), "Snake");
+  Fruit const fruit {sf::Vector2f(Window::Width / 2, Window::Height / 2)};
 
   while (window.isOpen()) {
     sf::Event event;
@@ -21,6 +23,7 @@ void Main()
     }
 
     window.clear();
+    window.draw(fruit.getShape());
     window.display();
   }
 }
