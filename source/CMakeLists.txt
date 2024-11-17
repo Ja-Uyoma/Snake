@@ -3,7 +3,13 @@
 find_package(SFML REQUIRED)
 
 add_executable(snake_exe)
-target_sources(snake_exe PRIVATE main.cpp)
+target_sources(snake_exe
+    PRIVATE
+        main.cpp
+        Constants.hpp
+        Fruit.hpp
+        Fruit.cpp
+)
 
 add_executable(snake::exe ALIAS snake_exe)
 
