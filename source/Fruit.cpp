@@ -24,6 +24,7 @@ Fruit::Fruit(sf::Vector2f const& position) noexcept : Fruit()
 void Fruit::setPosition(sf::Vector2f const& position) noexcept
 {
   m_position = position;
+  m_shape.setPosition(m_position);
 }
 
 /// Get the position of the fruit
