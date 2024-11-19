@@ -22,7 +22,7 @@ sf::RectangleShape Snake::snake() const noexcept
 /// Draw the snake in the window
 /// \param[in] snake The snake to be drawn
 /// \param[in] window The window to draw in
-void drawSnake(Snake const& snake, sf::RenderWindow& window)
+void drawSnake(Snake& snake, sf::RenderWindow& window)
 {
   window.draw(snake.snake());
 }
