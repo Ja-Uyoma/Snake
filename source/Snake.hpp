@@ -17,14 +17,14 @@ public:
   /// \returns The sf::RectangleShape instance representing the snake's body
   sf::RectangleShape snake() const noexcept;
 
+  /// Draw the snake in the window
+  /// \param[in] snake The snake to be drawn
+  /// \param[in] window The window to draw in
+  friend void drawSnake(Snake& snake, sf::RenderWindow& window);
+
 private:
   sf::RectangleShape m_body {sf::Vector2f(BlockSize, BlockSize)};
 };
-
-/// Draw the snake in the window
-/// \param[in] snake The snake to be drawn
-/// \param[in] window The window to draw in
-void drawSnake(Snake& snake, sf::RenderWindow& window);
 
 }   // namespace snake
 
