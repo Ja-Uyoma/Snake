@@ -2,6 +2,7 @@
 
 #include "Constants.hpp"
 #include "Fruit.hpp"
+#include "Snake.hpp"
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
@@ -16,9 +17,7 @@ void Game::run() const
 {
   sf::RenderWindow window(sf::VideoMode(Window::Width, Window::Height), "Snake");
   Fruit const fruit {sf::Vector2i(Window::Width / 2, Window::Height / 2)};
-  sf::RectangleShape snake {sf::Vector2f(BlockSize, BlockSize)};
-  snake.setFillColor(sf::Color::Green);
-  snake.setPosition(10 * BlockSize, 10 * BlockSize);
+  Snake snake;
 
   while (window.isOpen()) {
     sf::Event event;
@@ -31,7 +30,7 @@ void Game::run() const
 
     window.clear();
     window.draw(fruit.getShape());
-    window.draw(snake);
+    window.draw(snake.m_body);
     window.display();
   }
 }
