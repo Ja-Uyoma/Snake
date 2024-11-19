@@ -3,6 +3,7 @@
 #include "Constants.hpp"
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <iterator>
 
 namespace snake {
 
@@ -19,6 +20,12 @@ Snake::Snake() noexcept
 sf::RectangleShape Snake::snake() const noexcept
 {
   return m_body;
+}
+
+/// Move the snake within the window
+void Snake::move() noexcept
+{
+  m_positions.front().x += 1;
 }
 
 /// Draw the snake in the window

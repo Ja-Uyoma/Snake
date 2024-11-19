@@ -18,6 +18,9 @@ public:
   /// \returns The sf::RectangleShape instance representing the snake's body
   sf::RectangleShape snake() const noexcept;
 
+  /// Move the snake within the window
+  void move() noexcept;
+
   /// Draw the snake in the window
   /// \param[in] snake The snake to be drawn
   /// \param[in] window The window to draw in
