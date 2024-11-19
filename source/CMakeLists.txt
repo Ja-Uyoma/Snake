@@ -9,6 +9,8 @@ target_sources(snake_exe
         Constants.hpp
         Fruit.hpp
         Fruit.cpp
+        Game.hpp
+        Game.cpp
 )
 
 add_executable(snake::exe ALIAS snake_exe)
