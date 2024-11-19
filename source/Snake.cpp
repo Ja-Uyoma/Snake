@@ -24,7 +24,21 @@ sf::RectangleShape Snake::snake() const noexcept
 /// Move the snake within the window
 void Snake::move() noexcept
 {
-  m_positions.front().x += 1;
+  using enum Direction;
+  auto& head = m_positions.front();
+
+  if (m_direction == Up) {
+    --head.y;
+  }
+  else if (m_direction == Down) {
+    ++head.y;
+  }
+  else if (m_direction == Left) {
+    --head.x;
+  }
+  else if (m_direction == Right) {
+    ++head.x;
+  }
 }
 
 /// Draw the snake in the window

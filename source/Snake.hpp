@@ -9,6 +9,15 @@
 
 namespace snake {
 
+enum class Direction
+{
+  None,
+  Up,
+  Down,
+  Left,
+  Right
+};
+
 class Snake
 {
 public:
@@ -29,6 +38,7 @@ public:
 private:
   sf::RectangleShape m_body {sf::Vector2f(BlockSize, BlockSize)};
   std::vector<sf::Vector2i> m_positions {};
+  Direction m_direction {Direction::None};
 };
 
 }   // namespace snake
