@@ -3,7 +3,6 @@
 #include "Constants.hpp"
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
-#include <iterator>
 
 namespace snake {
 
