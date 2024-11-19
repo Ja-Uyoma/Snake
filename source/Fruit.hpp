@@ -15,22 +15,22 @@ public:
 
   /// Create a new Fruit instance with the given position
   /// \param[in] The position of the fruit
-  explicit Fruit(sf::Vector2f const& position) noexcept;
+  explicit Fruit(sf::Vector2i const& position) noexcept;
 
   /// Set the position of the fruit
   /// \param[in] position The new position of the fruit
-  void setPosition(sf::Vector2f const& position) noexcept;
+  void setPosition(sf::Vector2i const& position) noexcept;
 
   /// Get the position of the fruit
   /// \returns The position of the fruit
-  sf::Vector2f getPosition() const noexcept;
+  sf::Vector2i getPosition() const noexcept;
 
   /// Get the shape representing the fruit
   /// \returns The shape representing the fruit
   sf::CircleShape getShape() const noexcept;
 
 private:
-  sf::Vector2f m_position {};
+  sf::Vector2i m_position {};
   sf::CircleShape m_shape {static_cast<float>(BlockSize) / 2};
 };
 

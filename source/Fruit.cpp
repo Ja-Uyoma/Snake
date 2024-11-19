@@ -14,22 +14,22 @@ Fruit::Fruit() noexcept
 
 /// Create a new Fruit instance with the given position
 /// \param[in] The position of the fruit
-Fruit::Fruit(sf::Vector2f const& position) noexcept : Fruit()
+Fruit::Fruit(sf::Vector2i const& position) noexcept : Fruit()
 {
   setPosition(position);
 }
 
 /// Set the position of the fruit
 /// \param[in] position The new position of the fruit
-void Fruit::setPosition(sf::Vector2f const& position) noexcept
+void Fruit::setPosition(sf::Vector2i const& position) noexcept
 {
   m_position = position;
-  m_shape.setPosition(m_position);
+  m_shape.setPosition(sf::Vector2f(m_position));
 }
 
 /// Get the position of the fruit
 /// \returns The position of the fruit
-sf::Vector2f Fruit::getPosition() const noexcept
+sf::Vector2i Fruit::getPosition() const noexcept
 {
   return m_position;
 }

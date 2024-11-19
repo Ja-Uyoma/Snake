@@ -11,7 +11,7 @@ namespace snake {
 void Main()
 {
   sf::RenderWindow window(sf::VideoMode(Window::Width, Window::Height), "Snake");
-  Fruit const fruit {sf::Vector2f(Window::Width / 2, Window::Height / 2)};
+  Fruit const fruit {sf::Vector2i(Window::Width / 2, Window::Height / 2)};
 
   while (window.isOpen()) {
     sf::Event event;
