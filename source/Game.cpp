@@ -31,6 +31,7 @@ void Game::run() const
     window.clear();
     window.draw(fruit.getShape());
     drawSnake(snake, window);
+    snake.move();
     window.display();
   }
 }
