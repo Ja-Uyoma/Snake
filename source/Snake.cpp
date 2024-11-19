@@ -32,6 +32,11 @@ void Snake::setDirection(Direction const& direction) noexcept
 void Snake::move() noexcept
 {
   using enum Direction;
+
+  if (m_direction == None) {
+    return;
+  }
+
   auto& head = m_positions.front();
 
   if (m_direction == Up) {
