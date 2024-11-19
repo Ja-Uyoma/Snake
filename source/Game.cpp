@@ -8,6 +8,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Event.hpp>
+#include <SFML/Window/Keyboard.hpp>
 #include <SFML/Window/VideoMode.hpp>
 
 namespace snake {
@@ -31,6 +32,20 @@ void Game::run() const
     window.clear();
     window.draw(fruit.getShape());
     drawSnake(snake, window);
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+      snake.setDirection(Direction::Up);
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+      snake.setDirection(Direction::Down);
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+      snake.setDirection(Direction::Left);
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+      snake.setDirection(Direction::Right);
+    }
+
     snake.move();
     window.display();
   }
