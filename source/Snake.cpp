@@ -9,7 +9,9 @@ namespace snake {
 Snake::Snake() noexcept
 {
   m_body.setFillColor(sf::Color::Green);
-  m_body.setPosition(10 * BlockSize, 10 * BlockSize);
+  m_positions.reserve(10);
+  m_positions.emplace_back(9 * BlockSize, 10 * BlockSize);
+  m_positions.emplace_back(10 * BlockSize, 10 * BlockSize);
 }
 
 /// Get the shape representing the snake
@@ -24,7 +26,10 @@ sf::RectangleShape Snake::snake() const noexcept
 /// \param[in] window The window to draw in
 void drawSnake(Snake& snake, sf::RenderWindow& window)
 {
-  window.draw(snake.snake());
+  for (auto const& pos : snake.m_positions) {
+    snake.m_body.setPosition(sf::Vector2f(pos));
+    window.draw(snake.snake());
+  }
 }
 
 }   // namespace snake

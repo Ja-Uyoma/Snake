@@ -5,6 +5,7 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <vector>
 
 namespace snake {
 
@@ -24,6 +25,7 @@ public:
 
 private:
   sf::RectangleShape m_body {sf::Vector2f(BlockSize, BlockSize)};
+  std::vector<sf::Vector2i> m_positions {};
 };
 
 }   // namespace snake
