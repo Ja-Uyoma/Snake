@@ -12,6 +12,11 @@ class Snake
 public:
   Snake() noexcept;
 
+  /// Get the shape representing the snake
+  /// \returns The sf::RectangleShape instance representing the snake's body
+  sf::RectangleShape snake() const noexcept;
+
+private:
   sf::RectangleShape m_body {sf::Vector2f(BlockSize, BlockSize)};
 };
 
