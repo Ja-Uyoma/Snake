@@ -21,6 +21,13 @@ sf::RectangleShape Snake::snake() const noexcept
   return m_body;
 }
 
+/// Set the direction the snake is facing
+/// \param[in] direction The direction the snake is facing
+void Snake::setDirection(Direction const& direction) noexcept
+{
+  m_direction = direction;
+}
+
 /// Move the snake within the window
 void Snake::move() noexcept
 {

@@ -27,6 +27,10 @@ public:
   /// \returns The sf::RectangleShape instance representing the snake's body
   sf::RectangleShape snake() const noexcept;
 
+  /// Set the direction the snake is facing
+  /// \param[in] direction The direction the snake is facing
+  void setDirection(Direction const& direction) noexcept;
+
   /// Move the snake within the window
   void move() noexcept;
 
