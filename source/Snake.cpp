@@ -19,4 +19,12 @@ sf::RectangleShape Snake::snake() const noexcept
   return m_body;
 }
 
+/// Draw the snake in the window
+/// \param[in] snake The snake to be drawn
+/// \param[in] window The window to draw in
+void drawSnake(Snake const& snake, sf::RenderWindow& window)
+{
+  window.draw(snake.snake());
+}
+
 }   // namespace snake

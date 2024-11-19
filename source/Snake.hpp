@@ -3,6 +3,7 @@
 
 #include "Constants.hpp"
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Vector2.hpp>
 
 namespace snake {
@@ -19,6 +20,11 @@ public:
 private:
   sf::RectangleShape m_body {sf::Vector2f(BlockSize, BlockSize)};
 };
+
+/// Draw the snake in the window
+/// \param[in] snake The snake to be drawn
+/// \param[in] window The window to draw in
+void drawSnake(Snake const& snake, sf::RenderWindow& window);
 
 }   // namespace snake
 
