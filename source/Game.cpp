@@ -34,6 +34,11 @@ void Game::run()
 
     if (elapsedTime > sf::seconds(timeStep)) {
       m_snake.move();
+
+      if (m_snake.position() == m_fruit.getPosition()) {
+        m_snake.grow();
+      }
+
       elapsedTime -= sf::seconds(timeStep);
     }
 
