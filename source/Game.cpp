@@ -1,5 +1,7 @@
 #include "Game.hpp"
 
+#include "Constants.hpp"
+#include <SFML/System/Time.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/Keyboard.hpp>
 
@@ -8,6 +10,12 @@ namespace snake {
 /// Run the game
 void Game::run()
 {
+  auto elapsedTime {m_clock.getElapsedTime()};
+
+  // time = distance ÷ speed
+  // The fixed timeStep is the time the snake takes to cover a single block (or grid cell) in the game world
+  static constexpr auto timeStep {1.0f / (BlockSize * BlockSize)};
+
   while (m_window.isOpen()) {
     sf::Event event;
 
@@ -34,7 +42,12 @@ void Game::run()
       m_snake.setDirection(Direction::Right);
     }
 
-    m_snake.move();
+    if (elapsedTime > sf::seconds(timeStep)) {
+      m_snake.move();
+      elapsedTime -= sf::seconds(timeStep);
+    }
+
+    elapsedTime += m_clock.restart();
     m_window.display();
   }
 }
