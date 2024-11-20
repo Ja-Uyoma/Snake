@@ -37,6 +37,10 @@ void Snake::move() noexcept
     return;
   }
 
+  for (auto i = std::ssize(m_positions) - 1; i > 0; --i) {
+    m_positions[i] = m_positions[i - 1];
+  }
+
   auto& head = m_positions.front();
 
   if (m_direction == Up) {
