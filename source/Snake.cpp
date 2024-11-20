@@ -84,6 +84,12 @@ void Snake::grow()
   }
 }
 
+/// Decrease the size of the snake
+void Snake::shrink()
+{
+  m_positions.pop_back();
+}
+
 /// Draw the snake in the window
 /// \param[in] snake The snake to be drawn
 /// \param[in] window The window to draw in

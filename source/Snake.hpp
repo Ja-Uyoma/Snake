@@ -40,6 +40,9 @@ public:
   /// Increase the size of the snake
   void grow();
 
+  /// Decrease the size of the snake
+  void shrink();
+
   /// Draw the snake in the window
   /// \param[in] snake The snake to be drawn
   /// \param[in] window The window to draw in
