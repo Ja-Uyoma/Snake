@@ -45,16 +45,16 @@ void Snake::move() noexcept
   auto& head = m_positions.front();
 
   if (m_direction == Up) {
-    --head.y;
+    head.y -= 1 * BlockSize;
   }
   else if (m_direction == Down) {
-    ++head.y;
+    head.y += 1 * BlockSize;
   }
   else if (m_direction == Left) {
-    --head.x;
+    head.x -= 1 * BlockSize;
   }
   else if (m_direction == Right) {
-    ++head.x;
+    head.x += 1 * BlockSize;
   }
 }
 
