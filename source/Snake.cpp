@@ -3,6 +3,7 @@
 #include "Constants.hpp"
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Window/Keyboard.hpp>
 
 namespace snake {
 
@@ -65,6 +66,26 @@ void drawSnake(Snake& snake, sf::RenderWindow& window)
   for (auto const& pos : snake.m_positions) {
     snake.m_body.setPosition(sf::Vector2f(pos));
     window.draw(snake.snake());
+  }
+}
+
+/// Set the direction the snake is facing
+/// \param[in] snake The snake whose direction is to be set
+void setSnakeDirection(Snake& snake)
+{
+  using enum Direction;
+
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+    snake.setDirection(Up);
+  }
+  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+    snake.setDirection(Down);
+  }
+  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+    snake.setDirection(Left);
+  }
+  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+    snake.setDirection(Right);
   }
 }
 

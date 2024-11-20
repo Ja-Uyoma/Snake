@@ -45,6 +45,10 @@ private:
   Direction m_direction {Direction::None};
 };
 
+/// Set the direction the snake is facing
+/// \param[in] snake The snake whose direction is to be set
+void setSnakeDirection(Snake& snake);
+
 }   // namespace snake
 
 #endif
