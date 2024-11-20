@@ -3,7 +3,7 @@
 
 int main()
 {
-  snake::Game const game {};
+  snake::Game game {};
   game.run();
 
   return EXIT_SUCCESS;
