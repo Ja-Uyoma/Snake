@@ -43,6 +43,14 @@ sf::CircleShape const& Fruit::getShape() const noexcept
   return m_shape;
 }
 
+/// Draw the given fruit in the window
+/// \param[in] fruit The fruit to be drawn
+/// \param[in] window The window it is drawn in
+void drawFruit(Fruit const& fruit, sf::RenderWindow& window)
+{
+  window.draw(fruit.getShape());
+}
+
 /// Respawn the fruit elsewhere in the visible window
 /// \param[in] The fruit to be respawned
 void respawnFruit(Fruit& fruit)
