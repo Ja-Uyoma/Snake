@@ -15,7 +15,7 @@ void Game::run()
 
   // time = distance ÷ speed
   // The fixed timeStep is the time the snake takes to cover a single block (or grid cell) in the game world
-  static constexpr auto timeStep {1.0f / (BlockSize * BlockSize)};
+  static constexpr auto timeStep {1.0f / BlockSize};
 
   while (m_window.isOpen()) {
     sf::Event event;
