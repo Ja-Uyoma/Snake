@@ -10,7 +10,7 @@ namespace snake {
 Snake::Snake() noexcept
 {
   m_body.setFillColor(sf::Color::Green);
-  m_positions.reserve(10);
+  m_positions.reserve(20);
   m_positions.emplace_back(9 * BlockSize, 10 * BlockSize);
   m_positions.emplace_back(10 * BlockSize, 10 * BlockSize);
 }
