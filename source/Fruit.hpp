@@ -34,6 +34,10 @@ private:
   sf::CircleShape m_shape {static_cast<float>(BlockSize) / 2};
 };
 
+/// Respawn the fruit elsewhere in the visible window
+/// \param[in] The fruit to be respawned
+void respawnFruit(Fruit& fruit);
+
 }   // namespace snake
 
 #endif

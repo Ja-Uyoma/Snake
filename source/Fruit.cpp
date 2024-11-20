@@ -1,8 +1,10 @@
 #include "Fruit.hpp"
 
+#include "Constants.hpp"
 #include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <random>
 
 namespace snake {
 
@@ -39,6 +41,20 @@ sf::Vector2i Fruit::getPosition() const noexcept
 sf::CircleShape Fruit::getShape() const noexcept
 {
   return m_shape;
+}
+
+/// Respawn the fruit elsewhere in the visible window
+/// \param[in] The fruit to be respawned
+void respawnFruit(Fruit& fruit)
+{
+  static std::random_device rd {};
+  static std::mt19937 generator {rd()};
+
+  static constexpr auto gridX = Window::Width / BlockSize;
+  static constexpr auto gridY = Window::Height / BlockSize;
+
+  sf::Vector2i pos {static_cast<int>(generator() % gridX), static_cast<int>(generator() % gridY)};
+  fruit.setPosition(pos * BlockSize);
 }
 
 }   // namespace snake
