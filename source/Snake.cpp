@@ -139,18 +139,20 @@ void shrinkSnakeOnCollision(Snake& snake)
 /// \param[in] snake The snake whose direction is to be set
 void setSnakeDirection(Snake& snake)
 {
+  auto const& direction = snake.getDirection();
+
   using enum Direction;
 
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) and direction != Down) {
     snake.setDirection(Up);
   }
-  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) and direction != Up) {
     snake.setDirection(Down);
   }
-  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) and direction != Right) {
     snake.setDirection(Left);
   }
-  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) and direction != Left) {
     snake.setDirection(Right);
   }
 }
