@@ -1,6 +1,7 @@
 #include "Game.hpp"
 
 #include "Constants.hpp"
+#include "Fruit.hpp"
 #include "Snake.hpp"
 #include <SFML/System/Time.hpp>
 #include <SFML/Window/Event.hpp>
@@ -37,6 +38,7 @@ void Game::run()
 
       if (m_snake.position() == m_fruit.getPosition()) {
         m_snake.grow();
+        respawnFruit(m_fruit);
       }
 
       elapsedTime -= sf::seconds(timeStep);
