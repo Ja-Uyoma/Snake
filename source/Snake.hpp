@@ -37,6 +37,9 @@ public:
   /// Get the position of the head of the snake
   sf::Vector2i position() const noexcept;
 
+  /// Increase the size of the snake
+  void grow();
+
   /// Draw the snake in the window
   /// \param[in] snake The snake to be drawn
   /// \param[in] window The window to draw in

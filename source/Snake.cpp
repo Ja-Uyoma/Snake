@@ -64,6 +64,26 @@ sf::Vector2i Snake::position() const noexcept
   return m_positions.front();
 }
 
+/// Increase the size of the snake
+void Snake::grow()
+{
+  using enum Direction;
+  auto const& head = m_positions.front();
+
+  if (m_direction == Up) {
+    m_positions.emplace_back(head.x, head.y + (1 * BlockSize));
+  }
+  else if (m_direction == Down) {
+    m_positions.emplace_back(head.x, head.y - (1 * BlockSize));
+  }
+  else if (m_direction == Left) {
+    m_positions.emplace_back(head.x + (1 * BlockSize), head.y);
+  }
+  else if (m_direction == Right) {
+    m_positions.emplace_back(head.x - (1 * BlockSize), head.y);
+  }
+}
+
 /// Draw the snake in the window
 /// \param[in] snake The snake to be drawn
 /// \param[in] window The window to draw in
