@@ -28,7 +28,8 @@ void Game::run()
     }
 
     m_window.clear();
-    m_window.draw(m_fruit.getShape());
+
+    drawFruit(m_fruit, m_window);
     drawSnake(m_snake, m_window);
 
     setSnakeDirection(m_snake);
