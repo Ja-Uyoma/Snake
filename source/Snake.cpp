@@ -58,6 +58,12 @@ void Snake::move() noexcept
   }
 }
 
+/// Get the position of the head of the snake
+sf::Vector2i Snake::position() const noexcept
+{
+  return m_positions.front();
+}
+
 /// Draw the snake in the window
 /// \param[in] snake The snake to be drawn
 /// \param[in] window The window to draw in

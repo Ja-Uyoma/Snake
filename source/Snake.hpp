@@ -34,6 +34,9 @@ public:
   /// Move the snake within the window
   void move() noexcept;
 
+  /// Get the position of the head of the snake
+  sf::Vector2i position() const noexcept;
+
   /// Draw the snake in the window
   /// \param[in] snake The snake to be drawn
   /// \param[in] window The window to draw in
