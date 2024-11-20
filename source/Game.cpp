@@ -34,21 +34,26 @@ void Game::run()
     setSnakeDirection(m_snake);
 
     if (elapsedTime > sf::seconds(timeStep)) {
-      m_snake.move();
-
-      if (m_snake.position() == m_fruit.getPosition()) {
-        m_snake.grow();
-        respawnFruit(m_fruit);
-      }
-
-      shrinkSnakeOnCollision(m_snake);
-
+      tick();
       elapsedTime -= sf::seconds(timeStep);
     }
 
     elapsedTime += m_clock.restart();
     m_window.display();
   }
+}
+
+/// Process game updates that happen during a single cycle
+void Game::tick()
+{
+  m_snake.move();
+
+  if (m_snake.position() == m_fruit.getPosition()) {
+    m_snake.grow();
+    respawnFruit(m_fruit);
+  }
+
+  shrinkSnakeOnCollision(m_snake);
 }
 
 }   // namespace snake

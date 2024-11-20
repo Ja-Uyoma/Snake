@@ -25,6 +25,9 @@ private:
   Fruit m_fruit {sf::Vector2i(Window::Width / 2, Window::Height / 2)};
   Snake m_snake {};
   sf::Clock m_clock {};
+
+  /// Process game updates that happen during a single cycle
+  void tick();
 };
 
 }   // namespace snake
