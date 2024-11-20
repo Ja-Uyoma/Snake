@@ -14,40 +14,36 @@
 namespace snake {
 
 /// Run the game
-void Game::run() const
+void Game::run()
 {
-  sf::RenderWindow window(sf::VideoMode(Window::Width, Window::Height), "Snake");
-  Fruit const fruit {sf::Vector2i(Window::Width / 2, Window::Height / 2)};
-  Snake snake;
-
-  while (window.isOpen()) {
+  while (m_window.isOpen()) {
     sf::Event event;
 
-    while (window.pollEvent(event)) {
+    while (m_window.pollEvent(event)) {
       if (event.type == sf::Event::Closed) {
-        window.close();
+        m_window.close();
       }
     }
 
-    window.clear();
-    window.draw(fruit.getShape());
-    drawSnake(snake, window);
+    m_window.clear();
+    m_window.draw(m_fruit.getShape());
+    drawSnake(m_snake, m_window);
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-      snake.setDirection(Direction::Up);
+      m_snake.setDirection(Direction::Up);
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-      snake.setDirection(Direction::Down);
+      m_snake.setDirection(Direction::Down);
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-      snake.setDirection(Direction::Left);
+      m_snake.setDirection(Direction::Left);
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-      snake.setDirection(Direction::Right);
+      m_snake.setDirection(Direction::Right);
     }
 
-    snake.move();
-    window.display();
+    m_snake.move();
+    m_window.display();
   }
 }
 
