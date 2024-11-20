@@ -1,15 +1,7 @@
 #include "Game.hpp"
 
-#include "Constants.hpp"
-#include "Fruit.hpp"
-#include "Snake.hpp"
-#include <SFML/Graphics/Color.hpp>
-#include <SFML/Graphics/RectangleShape.hpp>
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/Keyboard.hpp>
-#include <SFML/Window/VideoMode.hpp>
 
 namespace snake {
 
