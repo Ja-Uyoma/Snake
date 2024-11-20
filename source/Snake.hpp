@@ -31,6 +31,10 @@ public:
   /// \param[in] direction The direction the snake is facing
   void setDirection(Direction const& direction) noexcept;
 
+  /// Get the direction the snake is facing
+  /// \returns The direction the snake is facing
+  Direction const& getDirection() const noexcept;
+
   /// Move the snake within the window
   void move() noexcept;
 

@@ -32,6 +32,13 @@ void Snake::setDirection(Direction const& direction) noexcept
   m_direction = direction;
 }
 
+/// Get the direction the snake is facing
+/// \returns The direction the snake is facing
+Direction const& Snake::getDirection() const noexcept
+{
+  return m_direction;
+}
+
 /// Move the snake within the window
 void Snake::move() noexcept
 {
