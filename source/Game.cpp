@@ -41,6 +41,8 @@ void Game::run()
         respawnFruit(m_fruit);
       }
 
+      shrinkSnakeOnCollision(m_snake);
+
       elapsedTime -= sf::seconds(timeStep);
     }
 
