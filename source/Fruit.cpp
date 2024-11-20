@@ -31,14 +31,14 @@ void Fruit::setPosition(sf::Vector2i const& position) noexcept
 
 /// Get the position of the fruit
 /// \returns The position of the fruit
-sf::Vector2i Fruit::getPosition() const noexcept
+sf::Vector2i const& Fruit::getPosition() const noexcept
 {
   return m_position;
 }
 
 /// Get the shape representing the fruit
 /// \returns The shape representing the fruit
-sf::CircleShape Fruit::getShape() const noexcept
+sf::CircleShape const& Fruit::getShape() const noexcept
 {
   return m_shape;
 }

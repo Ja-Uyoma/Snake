@@ -20,7 +20,7 @@ Snake::Snake() noexcept
 
 /// Get the shape representing the snake
 /// \returns The sf::RectangleShape instance representing the snake's body
-sf::RectangleShape Snake::snake() const noexcept
+sf::RectangleShape const& Snake::snake() const noexcept
 {
   return m_body;
 }
@@ -69,7 +69,7 @@ void Snake::move() noexcept
 }
 
 /// Get the position of the head of the snake
-sf::Vector2i Snake::position() const noexcept
+sf::Vector2i const& Snake::position() const noexcept
 {
   return m_positions.front();
 }

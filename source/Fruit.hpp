@@ -23,11 +23,11 @@ public:
 
   /// Get the position of the fruit
   /// \returns The position of the fruit
-  sf::Vector2i getPosition() const noexcept;
+  sf::Vector2i const& getPosition() const noexcept;
 
   /// Get the shape representing the fruit
   /// \returns The shape representing the fruit
-  sf::CircleShape getShape() const noexcept;
+  sf::CircleShape const& getShape() const noexcept;
 
 private:
   sf::Vector2i m_position {};
