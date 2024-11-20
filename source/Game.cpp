@@ -1,6 +1,7 @@
 #include "Game.hpp"
 
 #include "Constants.hpp"
+#include "Snake.hpp"
 #include <SFML/System/Time.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/Keyboard.hpp>
@@ -29,18 +30,7 @@ void Game::run()
     m_window.draw(m_fruit.getShape());
     drawSnake(m_snake, m_window);
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-      m_snake.setDirection(Direction::Up);
-    }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-      m_snake.setDirection(Direction::Down);
-    }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-      m_snake.setDirection(Direction::Left);
-    }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-      m_snake.setDirection(Direction::Right);
-    }
+    setSnakeDirection(m_snake);
 
     if (elapsedTime > sf::seconds(timeStep)) {
       m_snake.move();
