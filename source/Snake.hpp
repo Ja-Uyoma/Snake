@@ -48,6 +48,10 @@ public:
   /// \param[in] window The window to draw in
   friend void drawSnake(Snake& snake, sf::RenderWindow& window);
 
+  /// Shrink the snake whenever it collides with itself
+  /// \param[in] snake The snake to be shrunk upon collision with itself
+  friend void shrinkSnakeOnCollision(Snake& snake);
+
 private:
   sf::RectangleShape m_body {sf::Vector2f(BlockSize, BlockSize)};
   std::vector<sf::Vector2i> m_positions {};

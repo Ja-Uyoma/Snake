@@ -3,7 +3,10 @@
 #include "Constants.hpp"
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Keyboard.hpp>
+#include <algorithm>
+#include <iterator>
 
 namespace snake {
 
@@ -98,6 +101,30 @@ void drawSnake(Snake& snake, sf::RenderWindow& window)
   for (auto const& pos : snake.m_positions) {
     snake.m_body.setPosition(sf::Vector2f(pos));
     window.draw(snake.snake());
+  }
+}
+
+/// Shrink the snake whenever it collides with itself
+/// \param[in] snake The snake to be shrunk upon collision with itself
+void shrinkSnakeOnCollision(Snake& snake)
+{
+  auto const& pos = snake.m_positions;
+
+  // Can't have collisions if the size of m_positions is less than 5
+  if (pos.size() < 5) {
+    return;
+  }
+
+  auto const& head = pos.front();
+  auto const iter = std::ranges::find_if(
+    std::next(pos.cbegin()), pos.cend(), [&head](sf::Vector2i const& position) { return head == position; });
+
+  if (iter != pos.cend()) {
+    auto const dropped = std::distance(iter, pos.cend());
+
+    for (auto i = 0; i < dropped; ++i) {
+      snake.shrink();
+    }
   }
 }
 
