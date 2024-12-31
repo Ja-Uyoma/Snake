@@ -2,7 +2,7 @@
 
 The classic game of Snake, written in C++ and SFML.
 
-![[assets/gameplay.webm]]
+[gameplay.webm](https://github.com/Ja-Uyoma/Snake/assets/gameplay.webm)
 
 ## Building and installing
 
